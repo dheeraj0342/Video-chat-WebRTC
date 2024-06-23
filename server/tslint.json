@@ -1,0 +1,21 @@
+{
+    "extends": "tslint:recommended",
+    "defaultSeverity": "error",
+    "rules":{
+        "no-console":{
+            "severity": "warning",
+            "options": ["log", "debug", "info", "trace"]
+
+        },
+        "max-line-length":[true,100],
+        "semicolon":{
+            "options":[
+                "always"
+            ]
+        }
+        },
+    "jsRules": {
+
+
+    }
+}
