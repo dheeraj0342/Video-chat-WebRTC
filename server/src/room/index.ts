@@ -9,11 +9,15 @@ interface IRoomParams{
 }
 
 export const roomHandler= (socket:Socket) => {
+
+
     const createRoom = () =>{
         const roomId = uuidv4();
         rooms[roomId] =[];
         socket.emit('room-created',{roomId});
     };
+
+
     const joinRoom = ({roomId,peerId}:IRoomParams) =>{
         if(rooms[roomId]){
             console.log(`New User:${peerId} joined room:${roomId}`);
@@ -36,7 +40,6 @@ export const roomHandler= (socket:Socket) => {
 
 
     };
-
 
     socket.on('create-room', createRoom);
     socket.on('join-room', joinRoom);
